@@ -1,6 +1,7 @@
-var DappToken = artifacts.require("./DappToken.sol");
 
-contract('DappToken', function(accounts) {
+var BeckToken = artifacts.require("./DappToken.sol");
+
+contract('BeckToken', function(accounts) {
   var tokenInstance;
 
   it('initializes the contract with the correct values', function() {
@@ -8,18 +9,18 @@ contract('DappToken', function(accounts) {
       tokenInstance = instance;
       return tokenInstance.name();
     }).then(function(name) {
-      assert.equal(name, 'DApp Token', 'has the correct name');
+      assert.equal(name, 'Beck Token', 'has the correct name');
       return tokenInstance.symbol();
     }).then(function(symbol) {
-      assert.equal(symbol, 'DAPP', 'has the correct symbol');
+      assert.equal(symbol, 'BECK', 'has the correct symbol');
       return tokenInstance.standard();
     }).then(function(standard) {
-      assert.equal(standard, 'DApp Token v1.0', 'has the correct standard');
+      assert.equal(standard, 'Beck Token v1', 'has the correct standard');
     });
   })
 
   it('allocates the initial supply upon deployment', function() {
-    return DappToken.deployed().then(function(instance) {
+    return BeckToken.deployed().then(function(instance) {
       tokenInstance = instance;
       return tokenInstance.totalSupply();
     }).then(function(totalSupply) {
@@ -31,7 +32,7 @@ contract('DappToken', function(accounts) {
   });
 
   it('transfers token ownership', function() {
-    return DappToken.deployed().then(function(instance) {
+    return BeckToken.deployed().then(function(instance) {
       tokenInstance = instance;
       // Test `require` statement first by transferring something larger than the sender's balance
       return tokenInstance.transfer.call(accounts[1], 99999999999999999999999);
