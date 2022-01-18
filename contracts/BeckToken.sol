@@ -1,9 +1,10 @@
+
 pragma solidity ^0.4.2;
 
 contract DappToken {
-    string  public name = "DApp Token";
-    string  public symbol = "DAPP";
-    string  public standard = "DApp Token v1.0";
+    string  public name = "Beck Token";
+    string  public symbol = "Beck";
+    string  public standard = "Beck Token v1";
     uint256 public totalSupply;
 
     event Transfer(
