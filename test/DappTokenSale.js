@@ -1,7 +1,8 @@
-var DappToken = artifacts.require('./DappToken.sol');
-var DappTokenSale = artifacts.require('./DappTokenSale.sol');
 
-contract('DappTokenSale', function(accounts) {
+var BeckToken = artifacts.require('./BeckToken.sol');
+var BeckToken = artifacts.require('./BeckToken.sol');
+
+contract('BeckToken', function(accounts) {
   var tokenInstance;
   var tokenSaleInstance;
   var admin = accounts[0];
@@ -26,10 +27,10 @@ contract('DappTokenSale', function(accounts) {
   });
 
   it('facilitates token buying', function() {
-    return DappToken.deployed().then(function(instance) {
+    return BeckToken.deployed().then(function(instance) {
       // Grab token instance first
       tokenInstance = instance;
-      return DappTokenSale.deployed();
+      return BeckToken.deployed();
     }).then(function(instance) {
       // Then grab token sale instance
       tokenSaleInstance = instance;
