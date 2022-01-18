@@ -1,5 +1,6 @@
+
 {
-  "contractName": "DappTokenSale",
+  "contractName": "BeckTokenSale",
   "abi": [
     {
       "constant": true,
