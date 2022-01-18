@@ -1,7 +1,7 @@
 {
-  "name": "dapp-token-sale",
+  "name": "beck-token",
   "version": "1.0.0",
-  "description": "Dapp Token Sale ICO",
+  "description": "Beck Token Sale ICO",
   "main": "truffle.js",
   "directories": {
     "test": "test"
