@@ -1,6 +1,7 @@
+
 pragma solidity ^0.4.2;
 
-import "./DappToken.sol";
+import "./BeckToken.sol";
 
 contract DappTokenSale {
     address admin;
@@ -10,7 +11,7 @@ contract DappTokenSale {
 
     event Sell(address _buyer, uint256 _amount);
 
-    function DappTokenSale(DappToken _tokenContract, uint256 _tokenPrice) public {
+    function BeckToken(BeckToken _tokenContract, uint256 _tokenPrice) public {
         admin = msg.sender;
         tokenContract = _tokenContract;
         tokenPrice = _tokenPrice;
@@ -34,8 +35,6 @@ contract DappTokenSale {
         require(msg.sender == admin);
         require(tokenContract.transfer(admin, tokenContract.balanceOf(this)));
 
-        // UPDATE: Let's not destroy the contract here
-        // Just transfer the balance to the admin
         admin.transfer(address(this).balance);
     }
 }
