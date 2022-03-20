@@ -1,7 +1,7 @@
 
 pragma solidity ^0.4.2;
 
-contract DappToken {
+contract BeckToken {
     string  public name = "Beck Token";
     string  public symbol = "Beck";
     string  public standard = "Beck Token v1";
