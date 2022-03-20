@@ -3,7 +3,7 @@ pragma solidity ^0.4.2;
 
 import "./BeckToken.sol";
 
-contract DappTokenSale {
+contract BeckToken {
     address admin;
     DappToken public tokenContract;
     uint256 public tokenPrice;
