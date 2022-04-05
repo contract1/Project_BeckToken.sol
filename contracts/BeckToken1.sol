@@ -5,7 +5,7 @@ import "./BeckToken.sol";
 
 contract BeckToken {
     address admin;
-    DappToken public tokenContract;
+    BeckToken public tokenContract;
     uint256 public tokenPrice;
     uint256 public tokensSold;
 
