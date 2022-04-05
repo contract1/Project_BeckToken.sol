@@ -1,11 +1,11 @@
 
-var BeckToken = artifacts.require("./DappToken.sol");
+var BeckToken = artifacts.require("./BeckToken.sol");
 
 contract('BeckToken', function(accounts) {
   var tokenInstance;
 
   it('initializes the contract with the correct values', function() {
-    return DappToken.deployed().then(function(instance) {
+    return BeckToken.deployed().then(function(instance) {
       tokenInstance = instance;
       return tokenInstance.name();
     }).then(function(name) {
@@ -58,7 +58,7 @@ contract('BeckToken', function(accounts) {
   });
 
   it('approves tokens for delegated transfer', function() {
-    return DappToken.deployed().then(function(instance) {
+    return BeckToken.deployed().then(function(instance) {
       tokenInstance = instance;
       return tokenInstance.approve.call(accounts[1], 100);
     }).then(function(success) {
@@ -77,7 +77,7 @@ contract('BeckToken', function(accounts) {
   });
 
   it('handles delegated token transfers', function() {
-    return DappToken.deployed().then(function(instance) {
+    return BeckToken.deployed().then(function(instance) {
       tokenInstance = instance;
       fromAccount = accounts[2];
       toAccount = accounts[3];
