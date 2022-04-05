@@ -12,7 +12,7 @@ contract('BeckToken', function(accounts) {
   var numberOfTokens;
 
   it('initializes the contract with the correct values', function() {
-    return DappTokenSale.deployed().then(function(instance) {
+    return BeckTokenSale.deployed().then(function(instance) {
       tokenSaleInstance = instance;
       return tokenSaleInstance.address
     }).then(function(address) {
@@ -64,10 +64,10 @@ contract('BeckToken', function(accounts) {
   });
 
   it('ends token sale', function() {
-    return DappToken.deployed().then(function(instance) {
+    return BeckToken.deployed().then(function(instance) {
       // Grab token instance first
       tokenInstance = instance;
-      return DappTokenSale.deployed();
+      return BeckTokenSale.deployed();
     }).then(function(instance) {
       // Then grab token sale instance
       tokenSaleInstance = instance;
